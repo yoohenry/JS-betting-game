@@ -1,2 +1,15 @@
 <script>
+
+var startMoney = 100;
+ 
+//prompts user for the amount they want to bet
+function newBetting() {
+ 
+    var bet = prompt("How much you wanna bet, sir?");
+    if (bet < 5 || bet > 10)
+        alert ("Please bet within $5-$10, sir");
+}
+ 
+newBetting();
+
 </script>
