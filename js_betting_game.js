@@ -18,10 +18,14 @@ function newBetting() {
         alert ("Please bet within $5-$10, sir");
 
     var guess = prompt("Please choose a number between 1-10, sir");
-    if (guess === randomNumber)
+    if (guess === randomNumber) {
+        startMoney *= 2;
         alert ("Good guess, sir");
+        debugger;
+    }
     else
         alert ("Terrible guess, sir \n Please hand over your money");
+
 }
  
 newBetting();
