@@ -12,20 +12,25 @@
 function newBetting() {
     var startMoney = 100;
     var randomNumber = Math.floor(Math.random() * 10 + 1);
- 
-    var bet = prompt("How much you wanna bet, sir?");
-    if (bet < 5 || bet > 10)
-        alert ("Please bet within $5-$10, sir");
+    while (startMoney > 0) {
+        var bet = prompt("How much you wanna bet, sir?");
+        if (bet < 5 || bet > 10)
+            alert ("Please bet within $5-$10, sir");
 
-    var guess = prompt("Please choose a number between 1-10, sir");
-    if (guess === randomNumber) {
-        startMoney *= 2;
-        alert ("Good guess, sir");
-        debugger;
+        var guess = prompt("Please choose a number between 1-10, sir");
+        if (guess === randomNumber) {
+            startMoney *= 2;
+            alert ("Good guess, sir");
+        }
+        else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
+            alert ("Nice try, sir");
+        }
+
+        else {
+            startMoney -= guess;
+            alert ("Terrible guess, sir \n Please hand over your money");
+        }
     }
-    else
-        alert ("Terrible guess, sir \n Please hand over your money");
-
 }
  
 newBetting();
