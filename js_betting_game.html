@@ -22,9 +22,15 @@ function newBetting() {
         startMoney *= 2;
         alert ("Good guess, sir");
     }
-    else
-        alert ("Terrible guess, sir \n Please hand over your money");
+    else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
+        alert ("Nice try, sir");
+    }
 
+    else {
+        startMoney -= guess;
+        alert ("Terrible guess, sir \n Please hand over your money");
+    }
+    debugger;
 }
  
 newBetting();
