@@ -8,7 +8,7 @@
 // game ends when the user loses all money
  
 $(function () {
-    var startMoney = 100;
+    var money = 100;
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     do {
         var bet = prompt("How much you wanna bet, sir?");
@@ -17,7 +17,7 @@ $(function () {
 
         var guess = prompt("Please choose a number between 1-10, sir");
         if (guess === randomNumber) {
-            startMoney *= 2;
+            money += (bet * 2);
             alert ("Good guess, sir");
         }
         else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
@@ -25,9 +25,9 @@ $(function () {
         }
 
         else {
-            startMoney -= guess;
+            money -= bet;
             alert ("Terrible guess, sir \n Please hand over your money");
         }
-    } while (startMoney > 4);
+    } while (money > 4);
     alert ("You are broke, get out")
 }
