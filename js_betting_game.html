@@ -2,10 +2,18 @@
 <html>
     <head>
         <link rel="stylesheet" href="js_betting_game.css" type="text/css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
         <title>Betting Game</title>
     </head>
     <body>
-    <script src = "js_betting_game.js"></script>
+        <header>
+            <p>Your $:<span id="start-money"></span></p> 
+        <div id = "container">
+            <form id = "betting-form">
+                Bet<input type="text" placeholder = "$" name = "bet" id = "bet"></form></br>
+                Guess<input type="text" placeholder = "#" naeme ="guess" id ="guess">
+            </form>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.11.3/jquery.mobile.min.js"></script>
+    <script src = "application.js"></script>
     </body>
 </html>

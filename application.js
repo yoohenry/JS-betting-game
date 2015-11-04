@@ -7,7 +7,7 @@
 // else they lose their bet
 // game ends when the user loses all money
  
-function newBetting() {
+$(function () {
     var startMoney = 100;
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     do {
@@ -31,5 +31,3 @@ function newBetting() {
     } while (startMoney > 4);
     alert ("You are broke, get out")
 }
- 
-newBetting();
