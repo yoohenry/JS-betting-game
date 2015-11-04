@@ -16,17 +16,21 @@ $(function () {
             alert ("Please bet within $5-$10, sir");
 
         var guess = prompt("Please choose a number between 1-10, sir");
-        if (guess === randomNumber) {
-            money += (bet * 2);
-            alert ("Good guess, sir");
-        }
-        else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
-            alert ("Nice try, sir");
-        }
+        if (guess > 0 && guess < 11)
+            if (guess === randomNumber) {
+                money += (bet * 2);
+                alert ("Good guess, sir");
+            }
+            else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
+                alert ("Nice try, sir");
+            }
 
+            else {
+                money -= bet;
+                alert ("Terrible guess, sir \n Please hand over your money");
+            }
         else {
-            money -= bet;
-            alert ("Terrible guess, sir \n Please hand over your money");
+            alert ("Please pick a number between 1-10, sir");
         }
     } while (money > 4);
     alert ("You are broke, get out")
