@@ -1,16 +1,17 @@
 $(function() {
     var money = 100;
+    var bet_amount = 0;
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     
     function between(x, min, max) {
         return x >= min && x <= max;
     }
     function win() {
-        money += (bet * 2);
+        money += (bet_amount * 2);
     }
 
     function lose() {
-        money -= bet
+        money -= bet_amount;
     }
 
     function updateStanding() {
@@ -19,8 +20,8 @@ $(function() {
 
     $("#bet").on('keypress', function(event) {
         if (event.keyCode == 13) {
-            bet = parseInt($("#bet").val(), 10);
-            if (between(bet, 5, 10)) {
+            bet_amount = parseInt($("#bet").val(), 10);
+            if (between(bet_amount, 5, 10)) {
                 $('#bet').hide();
                 $('h1').text('Guess a number:');
                 $("#guess").show();
@@ -37,8 +38,8 @@ $(function() {
             if (between(guess, 1, 10)) {
                 switch(guess) {
                 case randomNumber:
-                    win();
                     alert("Good guess, sir");
+                    win();
                     break;
                 case randomNumber - 1:
                     alert ("Nice try, sir");
@@ -47,8 +48,9 @@ $(function() {
                     alert ("Nice try, sir");
                     break;
                 default:
-                    lose();
                     alert("Terrible guess, sir \n Please hand over your money");
+                    lose();
+                    debugger;
                     break;
                 };
             }
