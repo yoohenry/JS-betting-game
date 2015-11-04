@@ -1,4 +1,3 @@
-
 // starts off with $100
 // prompts user for the amount they want to bet
 // alerts if it's outsdie $5-10
@@ -7,12 +6,11 @@
 // if the guess is off by one user keeps the money
 // else they lose their bet
 // game ends when the user loses all money
-
-
+ 
 function newBetting() {
     var startMoney = 100;
     var randomNumber = Math.floor(Math.random() * 10 + 1);
-    while (startMoney > 0) {
+    do {
         var bet = prompt("How much you wanna bet, sir?");
         if (bet < 5 || bet > 10)
             alert ("Please bet within $5-$10, sir");
@@ -30,8 +28,8 @@ function newBetting() {
             startMoney -= guess;
             alert ("Terrible guess, sir \n Please hand over your money");
         }
-    }
+    } while (startMoney > 4);
+    alert ("You are broke, get out")
 }
  
 newBetting();
-

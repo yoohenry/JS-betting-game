@@ -1,41 +1,11 @@
-<script>
-
-// starts off with $100
-// prompts user for the amount they want to bet
-// alerts if it's outsdie $5-10
-// guess 1-10 for a correct number
-// doubles money if corrent guess
-// if the guess is off by one user keeps the money
-// else they lose their bet
-// game ends when the user loses all money
- 
-function newBetting() {
-    var startMoney = 100;
-    var randomNumber = Math.floor(Math.random() * 10 + 1);
-    do {
-        var bet = prompt("How much you wanna bet, sir?");
-        if (bet < 5 || bet > 10)
-            alert ("Please bet within $5-$10, sir");
-
-        var guess = prompt("Please choose a number between 1-10, sir");
-        if (guess === randomNumber) {
-            startMoney *= 2;
-            alert ("Good guess, sir");
-        }
-        else if (guess === randomNumber - 1 || guess === randomNumber + 1) {
-            alert ("Nice try, sir");
-        }
-
-        else {
-            startMoney -= guess;
-            alert ("Terrible guess, sir \n Please hand over your money");
-        }
-    } while (startMoney > 0);
-    alert ("You are broke, get out")
-}
- 
-newBetting();
-
-
-
-</script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="js_betting_game.css" type="text/css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <title>Betting Game</title>
+    </head>
+    <body>
+    <script src = "js_betting_game.js"></script>
+    </body>
+</html>
