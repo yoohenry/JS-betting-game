@@ -55,6 +55,10 @@ $(function() {
             else {
                 alert("Please pick a number between 1-10, sir");
             };
+        $('#guess').hide();
+        $('h1').text('Play again?');
+        $("#replay").show();
+        updateStanding();
         };
     })
 })
